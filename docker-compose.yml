@@ -1,0 +1,53 @@
+version: "3.8"
+services:
+  api:
+    container_name: fila-flex
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      REDIS_HOST: cache
+      REDIS_PORT: 6379
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - redis
+    links:
+      - db
+      - redis
+    networks:
+      - appNetwork
+  db:
+    container_name: postgres
+    image: postgres:16.8-alpine3.20
+    restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+    networks:
+      - appNetwork
+  redis:
+    image: redis:alpine
+    container_name: cache
+    restart: always
+    volumes:
+      - redis:/data
+    ports:
+      - '6379:6379'
+    networks:
+        - appNetwork
+
+volumes:
+  db:  
+  redis:
+
+networks:
+  appNetwork:
