@@ -46,6 +46,17 @@ localhost:8080
 - `go mod graph` Exibe a árvore de dependências
 - `go mod verify` Verifica a árvore de dependências em busca de problemas
 
+### Referências Golang
+
+[09/03/2025] [A Pragmatic and Systematic Project Structure in Go](https://medium.com/insiderengineering/a-pragmatic-and-systematic-project-structure-in-go-4a47b4fbe929)
+
+[09/03/2025] [Layout padrão de projetos em Go
+](https://github.com/golang-standards/project-layout/blob/master/README_ptBR.md)
+
+[09/03/2025] [Go - The Ultimate Folder Structure](https://gist.github.com/ayoubzulfiqar/9f1a34049332711fddd4d4b2bfd46096)
+
+[09/03/2025] [O que é e como utilizar o package context](https://aprendagolang.com.br/o-que-e-e-como-utilizar-o-package-context/)
+
 ### Dicas Docker
 
 #### Quando devo usar a imagem scratch?
