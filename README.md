@@ -21,6 +21,7 @@ Projeto para gerenciamento de senhas para filas
 | Docker         | 20.10.21 |
 | Docker Compose | 2.13.0   |
 | Golang         | 1.21     |
+| [DEV] Air      | 1.61.7   |
 
 Para instalar as depencências, fazer build do docker e iniciar o projeto, basta o único comando abaixo
 ```sh
@@ -37,6 +38,16 @@ O projeto estará rodando em
 ```sh
 localhost:8080
 ```
+
+### Para os Desenvolvedores
+
+rodar o make docker-run para subir as dependencias (db, cache) em containers, logo após rodar o make watch para subir a aplicação em live reload
+
+- `make run` Roda a aplicação via terminal
+- `make build` Faz o build da aplicação
+- `make docker-run` Sobe os containers via Docker Compose
+- `make docker-down` Para os containers
+- `make watch` Roda em Live Reload para poder usar em localhost
 
 ### Comandos úteis do Golang
 
